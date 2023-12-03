@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter: Битва за Галактику</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #1b2735 0%, #090a0f 100%);
+            color: #00e6ff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            border: 1px solid #00e6ff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(10deg);
+            box-shadow: 0 10px 20px rgba(0, 230, 255, 0.5);
+        }
+
+        .card h1, .card h2 {
+            text-shadow: 0 0 10px #00e6ff;
+        }
+
+        .card-image {
+            width: 20%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-image:hover {
+            transform: scale(1.1);
+        }
+
+        /* Улучшенные анимации и переходы */
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #00e6ff; }
+            50% { box-shadow: 0 0 20px #00e6ff; }
+            100% { box-shadow: 0 0 5px #00e6ff; }
+        }
+
+        @keyframes rotateIn {
+            from { transform: rotateY(-360deg); }
+            to { transform: rotateY(0); }
+        }
+
+        .game-info {
+            animation: glow 2s ease-in-out infinite, rotateIn 1s ease-in-out forwards;
+        }
+
+        .lore {
+            animation: glow 3s ease-in-out infinite, rotateIn 1.5s ease-in-out forwards;
+        }
+
+        .mechanics {
+            animation: glow 4s ease-in-out infinite, rotateIn 2s ease-in-out forwards;
+        }
+
+        .asteroid, .enemies, .boss-info {
+            animation: glow 5s ease-in-out infinite, rotateIn 2.5s ease-in-out forwards;
+        }
+
+        .abilites {
+            animation: glow 6s ease-in-out infinite, rotateIn 3s ease-in-out forwards;
+        }
+
+        .control {
+            animation: glow 7s ease-in-out infinite, rotateIn 3.5s ease-in-out forwards;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Space Shooter: Битва за Галактику</h1>
+    <div class="card game-info">
+        <h2>Лор</h2>
+        <p>В далеком будущем галактика находится под угрозой инопланетного вторжения. Вы - лучший пилот элитного космического отряда, и ваша задача - отразить атаки врагов и защитить родные миры.</p>
+    </div>
+    <div class="card lore">
+        <h2>Расширенный Лор</h2>
+        <p>После столетий мира и процветания, галактика столкнулась с новой угрозой - таинственной и могущественной империей Звездных Теней. Эти безжалостные захватчики появились из неизведанных уголков космоса, и их цель - подчинить себе все живое.</p>
+        <p>Империя Звездных Теней обладает технологиями, далеко превосходящими все, что когда-либо видели свободные народы галактики. Их корабли способны мгновенно перемещаться между звездными системами, а их оружие может уничтожать целые планеты.</p>
+        <p>В эти темные времена возникла легенда о Герое Галактики - отважном пилоте, который в одиночку сможет изменить ход войны и вернуть надежду. Этим героем стали вы. Ваш корабль - последняя надежда цивилизаций, и только ваш мастерский пилотаж и стратегический ум могут привести к победе над Звездными Тенями.</p>
+        <p>Ваш путь будет полон испытаний, встреч с неизвестными формами жизни. Вы будете приближаться к истине о происхождении Звездных Теней и возможности положить конец их завоеваниям раз и навсегда.</p>
+    </div>
+    <div class="card mechanics">
+        <h2>Игровые Механики</h2>
+        <p>Игрок управляет космическим кораблем, стреляющим во врагов и избегающим встречных выстрелов от них. </p>
+    </div>
+    <div class="card abilites">
+        <img class="card-image" src="images/Ammo.png" alt="Абилити">
+        <img class="card-image" src="images/medkit.png" alt="Абилити">
+        <img class="card-image" src="images/perk.png" alt="Абилити">
+        <h2>Абилити</h2>
+        <p>На арене выпадают такие абилки как: аптечки, паки патронов и перк на усиления оружия(пули теперь двойные).</p>
+    </div>
+    <div class="card asteroid">
+        <img class="card-image" src="images/Asteroid2.png" alt="Астероид">
+        <h2>Астероиды</h2>
+        <p>Аккуратней с ними, при столкновении с астероидами ты теряешь прочность своего коробля.</p>
+    </div>
+    <div class="card enemies">
+        <img class="card-image" src="images/enemy.png" alt="Босс">
+        <h2>Враги</h2>
+        <p>Враги представлены различными типами инопланетных тварей, которые к вам недружелюбны. </p>
+    </div>
+    <div class="card boss-info">
+        <img class="card-image" src="images/boss.png" alt="Босс">
+        <h2>Босс</h2>
+        <p>Босс - это гигантское существо, оснащенное мощным вооружением и защитными системами. Победа над боссом требует стратегии и точности.</p>
+    </div>
+    <div class="card control">
+        <img class="card-image" src="images/arrows.png" alt="Управление">
+        <h2>Управление</h2>
+        <p>Для управления игрой используйте клавиши WASD или стрелки. Выстрел осуществляется на Пробел.</p>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <p>© 2023 Space Shooter: Битва за Галактику. Все права защищены.</p>
+        <div class="social-links">
+            <a href="https://vk.com/papamxzhet" target="_blank">VK</a> |
+            <a href="https://t.me/papamxzhet" target="_blank">Telegram</a> |
+            <a href="https://github.com/papamxzhet2994" target="_blank">GitHub</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
